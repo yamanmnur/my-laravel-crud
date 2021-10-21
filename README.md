@@ -1,9 +1,16 @@
 composer install
+<br>
 php artisan migrate
-php artisan db:seed
+<br>
+php artisan db:
+<br>
 php artisan key:generate
+<br>
 php artisan passport:install
+<br>
 php artisan serve
-
+<br>
+<br>
 akun untuk login
+<br>
 email dan password ada di seeder

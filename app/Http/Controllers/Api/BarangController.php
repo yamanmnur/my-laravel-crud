@@ -110,6 +110,30 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function updateBarang(Request $request)
+    {
+        $result = ['status' => 200];
+
+        try {
+            $result['data'] = $this->barangService->updatePost($request,$request->id);
+        } catch(Exception $e) {
+            $result = [
+                'status' => 500,
+                'error' => $e->getMessage()
+            ];
+        }
+
+        return response()->json($result, $result['status']);
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         $result = ['status' => 200];
